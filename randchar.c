@@ -77,13 +77,7 @@ static int randchar_init( void )
 
 static void randchar_cleanup(void) 
 {
-/*
-	if (unregister_chrdev(devmajor, devname)) {
-		printk( KERN_INFO "%s: unregister randchar failed\n", module_name);
-	}
-*/
 	unregister_chrdev(devmajor, devname);
-
 	printk( KERN_INFO "%s: removed fron kernel\n", module_name);
 }	
 module_init(randchar_init);
